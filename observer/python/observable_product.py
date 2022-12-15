@@ -10,7 +10,7 @@ class ObservableProduct:
     """
 
     def __init__(self):
-        self._users = list()  # SYB: list() yerine direkt "[]" şeklinde tanımlama da yapılabilir.
+        self._users = []
         self.message = ProductUpdateMessage()
 
     def add_observer(self, observer_user: AbstractObserverUser):

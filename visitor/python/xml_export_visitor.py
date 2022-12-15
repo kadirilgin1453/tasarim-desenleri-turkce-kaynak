@@ -12,9 +12,7 @@ class XmlExportVisitor(BookExportVisitor):
 
     def export_visit(self, item):
         # Parametre olarak gelen örneğin XML'e çevrilmesi işlemleri yer alacaktır.
-        if isinstance(item, Magazine):
-            print(f"{item.name} exported by XmlExportVisitor")
-        elif isinstance(item, Encyclopedia):
+        if isinstance(item, (Magazine, Encyclopedia)):
             print(f"{item.name} exported by XmlExportVisitor")
         else:
             raise NotImplementedError("Item type is not implemented.")
