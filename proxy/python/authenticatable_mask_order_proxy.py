@@ -15,8 +15,7 @@ class AuthenticatableMaskOrderProxy(OrderableMask):
         self._order_mask = MaskOrder()
 
     def create_order(self, person: Person):
-        is_valid = self.check_person_is_valid(person)
-        if is_valid:
+        if is_valid := self.check_person_is_valid(person):
             self._order_mask.create_order(person)
         """
         SYB: bu kod soyle daha kisa ve anlasilir yazılabilirdi. Gosterim acisinden

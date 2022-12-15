@@ -20,9 +20,7 @@ class ShoppingCart:
         self._items.append(item)
 
     def calculate_total(self):
-        sum_price = 0
-        for item in self._items:
-            sum_price += item.get_price()
+        sum_price = sum(item.get_price() for item in self._items)
         """
         SYB: Kodun c# tarafındaki aslına sadık kalmak adına birebir yazdım. Ancak bu hesaplama
         daha pythonic bir şekilde şöyle tek satırda yapılabilirdi:

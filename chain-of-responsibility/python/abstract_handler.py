@@ -17,6 +17,4 @@ class AbstractHandler(BaseHandler):
 
     @abstractmethod
     def handle_request(self, image: Image):
-        if self._next_handler:
-            return self._next_handler.handle_request(image)
-        return None
+        return self._next_handler.handle_request(image) if self._next_handler else None
